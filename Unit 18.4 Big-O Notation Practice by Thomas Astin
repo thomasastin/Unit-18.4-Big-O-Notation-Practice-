@@ -1,0 +1,126 @@
+Simplify the following big O expressions as much as possible:
+
+1. O(n + 10)
+2. O(100 * n)
+3. O(25)
+4. O(n^2 + n^3)
+5. O(n + n + n + n)
+6. O(1000 * log(n) + n)
+7. O(1000 * n * log(n) + n)
+8. O(2^n + n^2)
+9. O(5 + 3 + 1)
+10. O(n + n^(1/2) + n^2 + n * log(n)^10)
+
+The Simplified Version:
+
+1. O(n) because the dominant term is O(n).
+2. O(n) because constants are ignored.
+3. O(1) because O(25) is a constant.
+4. O(n^3) because the dominant term is n^3.
+5. O(n) because this becomes (4n) since constants are ignored.
+6. O(n) because (n) is the dominant term.
+7. O(n\logn(n)) because (n\log(n)) is the dominant term.
+8. O(2^n) becayse (2^n) is the dominant term.
+9. O(1) because O(5+ 3 +1) is a constant.
+10. O(n^2) because the dominant term is (n^2).
+
+
+Step Two: Calculating Time Complexity
+Determine the time complexities for each of the following functions. If you’re not sure what these functions do, copy and paste them into the console and experiment with different inputs!
+function logUpTo(n) {
+  for (let i = 1; i <= n; i++) {
+    console.log(i);
+  }
+}
+​
+Time Complexity:
+function logAtLeast10(n) {
+  for (let i = 1; i <= Math.max(n, 10); i++) {
+    console.log(i);
+  }
+}
+​
+Time Complexity:
+function logAtMost10(n) {```jsx
+for (let i = 1; i <= Math.min(n, 10); i++) {
+    console.log(i);
+  }
+}
+
+
+Time Complexity:
+
+
+function onlyElementsAtEvenIndex(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (i % 2 === 0) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+
+Time Complexity:
+
+
+function subtotals(array) {
+  let subtotalArray = [];
+  for (let i = 0; i < array.length; i++) {
+    let subtotal = 0;
+    for (let j = 0; j <= i; j++) {
+      subtotal += array[j];
+    }
+    subtotalArray.push(subtotal);
+  }
+  return subtotalArray;
+}
+
+Time Complexity:
+
+function vowelCount(str) {
+  let vowelCount = {};
+  const vowels = "aeiouAEIOU";
+
+  for (let char of str) {
+    if(vowels.includes(char)) {
+      if(char in vowelCount) {
+        vowelCount[char] += 1;
+      } else {
+        vowelCount[char] = 1;
+      }
+    }
+  }
+
+  return vowelCount;
+}
+
+Step Two Answered: 
+1. O(n) is the time complexity since the entire function is dependent on something happening n times.
+2. This function is also completely dependent on so O(n) is the tim complexity.
+3. O(1) because the function's runtime is constant and does not depend/grow with n.
+4. O(n) is the time complexity since the entire function is dependent on n being passed through. It's single iteration with no nested loops.
+5. O(n) since it's a single iteration and no nested loops.
+6. O(n) is single iteration and no nested loops as well.
+
+## **Part 3 - short answer**
+
+Answer the following questions
+
+1. True or false: n^2 + n is O(n^2). The answer is True because (n^2) is dominant to (n) so (n^2 + n) is (O(n^2)).
+2. True or false: n^2 * n is O(n^3). The answer is True because (n^2) is exponential and multiplying it by (n) makes (O(n^3)).
+3. True or false: n^2 + n is O(n). The answer is False because (n^2) grows faster than (n) so it is (O(n^2)).
+4. What’s the time complexity of the .indexOf array method? The time complexity of .indexOf is (O(n)) because it checks each element until it's found or reaches the end of the array.
+5. What’s the time complexity of the .includes array method? The time complexity of .includes is (O(n)) because it checks each element until it's found or reaches the end of the array.
+6. What’s the time complexity of the .forEach array method? The time complexity of .forEach is (O(n)) because it iterates through each element in the array, once.
+7. What’s the time complexity of the .sort array method? The time complexity of .sort array is (O(n\log n)) since it usually uses a variation of the quick/mergesort algorithm.
+8. What’s the time complexity of the .unshift array method? The time complexity of .unshift array is (O(n)) because it shifts all existing elements in the array to make room for a new element in the beginning of the array.
+9. What’s the time complexity of the .push array method? The time complexity of .push array is (O(1)) because it adds one new element to the end of the array.
+10. What’s the time complexity of the .splice array method? The time complexity of .splice array (O(n)) because it shifts elements for the addition or removal of other elements.
+11. What’s the time complexity of the .pop array method? The time complexity of .pop array is (O(1)) because it removes the last element of the array without being dependent on other elements.
+12. What’s the time complexity of the Object.keys() function? The time complexity Object.keys() is (O(n)) in which (n) is the number of keys in the object. It iterates through all keys.
+13. What’s the space complexity of the Object.keys() function? The space complexity of Object.key() is (O(n)) since (n) is the number of keys in the object.
+
+
+
+
